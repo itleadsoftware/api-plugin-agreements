@@ -29,7 +29,7 @@ function myPublishProductToCatalog(catalogProduct, { context, product, shop, var
 export default async function register(app) {
   await app.registerPlugin({
     label: "Agreements Checkboxes Plugin",
-    name: "reaction-api-plugin-agreements",
+    name: "apipluginagreements",
     version: pkg.version,
     functionsByType: {
       startup: [myStartup],
