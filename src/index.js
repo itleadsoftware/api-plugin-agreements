@@ -1,17 +1,43 @@
-import { createRequire } from "module";
+import importAsString from "@reactioncommerce/api-utils/importAsString.js";
 
-const require = createRequire(import.meta.url);
-const pkg = require("../package.json");
+const mySchema = importAsString("./schema.graphql");
+function myPublishProductToCatalog(catalogProduct, { context, product, shop, variants }) {
+  catalogProduct.variants && catalogProduct.variants.map((catalogVariant) => {
+    const productVariant = variants.find((variant) => variant._id === catalogVariant.variantId);
+    catalogVariant.volume = productVariant.volume || null;
+  });
+ }
 
-/**
- * @summary Import and call this function to add this plugin to your API.
- * @param {Object} app The ReactionAPI instance
- * @returns {undefined}
- */
+ function myStartup(context) {
+  context.simpleSchemas.ProductVariant.extend({
+    volume: {
+      type: Number,
+      min: 0,
+      optional: true
+    }
+  });
+
+  context.simpleSchemas.CatalogProductVariant.extend({
+    volume: {
+      type: Number,
+      min: 0,
+      optional: true
+    }
+  })
+}
+ 
 export default async function register(app) {
   await app.registerPlugin({
-    label: pkg.label,
-    name: pkg.name,
-    version: pkg.version
+    label: "Agreements Checkboxes Plugin",
+    name: "reaction-api-plugin-agreements",
+    version: pkg.version,
+    functionsByType: {
+      startup: [myStartup],
+      publishProductToCatalog: [myPublishProductToCatalog]
+    },
+    graphQL: {
+      resolvers,
+      schemas
+    }
   });
 }

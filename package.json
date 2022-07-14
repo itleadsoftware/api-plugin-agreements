@@ -1,28 +1,28 @@
 {
-  "name": "@reactioncommerce/api-plugin-example",
-  "description": "Boilerplate Example plugin for the Reaction API",
-  "label": "Example Plugin",
-  "version": "0.0.0-development",
+  "name": "@itleadopencommerce/api-plugin-agreements",
+  "description": "Save registration agreements checkboxes ",
+  "label": "Agreements Checkboxes Plugin",
+  "version": "0.0.1",
   "main": "index.js",
   "type": "module",
   "engines": {
     "node": ">=14.18.1"
   },
-  "homepage": "https://github.com/reactioncommerce/api-plugin-example",
-  "url": "https://github.com/reactioncommerce/api-plugin-example",
-  "email": "hello-open-commerce@mailchimp.com",
+  "homepage": "https://github.com/it-lead-team/api-plugin-agreements",
+  "url": "https://github.com/it-lead-team/api-plugin-agreements",
+  "email": "engineering@reactioncommerce.com",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/reactioncommerce/api-plugin-example.git"
+    "url": "git+https://github.com/reactioncommerce/api-plugin-agreements.git"
   },
   "author": {
-    "name": "Mailchimp Open Commerce",
-    "email": "hello-open-commerce@mailchimp.com",
-    "url": "https://mailchimp.com/developer/open-commerce/"
+    "name": "Reaction Commerce",
+    "email": "engineering@reactioncommerce.com",
+    "url": "https://reactioncommerce.com"
   },
   "license": "Apache-2.0",
   "bugs": {
-    "url": "https://github.com/reactioncommerce/api-plugin-example/issues"
+    "url": "https://github.com/it-lead-team/api-plugin-agreements/issues"
   },
   "sideEffects": false,
   "dependencies": {
